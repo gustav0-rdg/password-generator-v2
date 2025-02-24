@@ -25,7 +25,46 @@
         </header>
         <!-- Area principal que contem todos os elementos funcionais e interativos -->
         <main class="password-generator__main">
+            <!-- Logo gerador de senhas -->
+            <img class="password-generator__logo" src="./assets/img/logo-senai-sp.png" alt="Logo SENAI SP" />
             
+            <!-- Container de entrada de inputs para definir os valores possiveis na senha -->
+            <div class="password-generator__input">
+                <!-- Exibicao do tamanho da senha -->
+                <span class="password-generator__text">Tamanho <span class="password-generator__size"></span> Caracteres</span>
+
+                <!-- Controle deslizante -->
+                <input class="password-generator__slider" type="range" min="8" max="16" value="8" />
+
+                <div class="password-generator__options">
+                    <label class="password-generator__option" name="uppercase-label">
+                        <input type="checkbox" class="password-generator__checkbox uppercase-check" name="uppercase" checked>
+                        Letras maiúsculas (A-Z)
+                    </label>
+                    <label class="password-generator__option" name="lowercase-label">
+                        <input type="checkbox" class="password-generator__checkbox lowercase-check" name="lowercase" checked>
+                        Letras minúsculas (a-z)
+                    </label>
+                    <label class="password-generator__option" name="numbers-label">
+                        <input type="checkbox" class="password-generator__checkbox numbers-check" name="numbers" checked>
+                        Números (0-9)
+                    </label>
+                    <label class="password-generator__option" name="special-label">
+                        <input type="checkbox" class="password-generator__checkbox special-check" name="special" checked>
+                        Caracteres especiais (!@#$%&*)
+                    </label>
+                </div>
+            </div>
+
+            <!-- Container que exibe a senha gerada -->
+            <div class="password-generator__result hide">
+
+            </div>
+
+            <!-- Container de historico -->
+            <div class="password-generator__history">
+
+            </div>
         </main>
     </section>
 </body>
