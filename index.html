@@ -58,7 +58,7 @@
                         Caracteres especiais (!@#$%&*)
                     </label>
                 </div>
-                
+
                 <!-- Container para os botões -->
                 <div class="password-generator__button-container">
                     <button class="password-generator__button">Gerar Nova Senha</button>
@@ -68,12 +68,15 @@
 
             <!-- Container que exibe a senha gerada -->
             <div class="password-generator__result hide">
-
+                <span class="password-generator__title">Sua nova senha foi gerada</span>
+                <span class="password-generator__output"></span>
+                <span class="password-generator__tooltip">Clique na senha pra copiar. </span>
             </div>
 
             <!-- Container de historico -->
             <div class="password-generator__history">
-
+                <h2 class="password-generator__history--title">Últimas senhas geradas:</h2>
+                <ul class="password-generator__history--list"></ul>
             </div>
         </main>
     </section>
