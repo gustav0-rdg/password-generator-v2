@@ -37,22 +37,32 @@
                 <input class="password-generator__slider" type="range" min="8" max="16" value="8" />
 
                 <div class="password-generator__options">
+                    <!-- Incluir letras maiusculas -->
                     <label class="password-generator__option" name="uppercase-label">
                         <input type="checkbox" class="password-generator__checkbox uppercase-check" name="uppercase" checked>
                         Letras maiúsculas (A-Z)
                     </label>
+                    <!-- incluir letras minusculas -->
                     <label class="password-generator__option" name="lowercase-label">
                         <input type="checkbox" class="password-generator__checkbox lowercase-check" name="lowercase" checked>
                         Letras minúsculas (a-z)
                     </label>
+                    <!-- Incluir numeros -->
                     <label class="password-generator__option" name="numbers-label">
                         <input type="checkbox" class="password-generator__checkbox numbers-check" name="numbers" checked>
                         Números (0-9)
                     </label>
+                    <!-- Incluir caracteres especiais -->
                     <label class="password-generator__option" name="special-label">
                         <input type="checkbox" class="password-generator__checkbox special-check" name="special" checked>
                         Caracteres especiais (!@#$%&*)
                     </label>
+                </div>
+                
+                <!-- Container para os botões -->
+                <div class="password-generator__button-container">
+                    <button class="password-generator__button">Gerar Nova Senha</button>
+                    <button class="password-generator__button password-generator__button--clear">Limpar</button>
                 </div>
             </div>
 
