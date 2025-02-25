@@ -12,7 +12,7 @@ const dateTimeElement = document.querySelector('.password-generator__datetime');
 
 // Criar um objeto
 
-const characters = {
+const charsets = {
     uppercase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
     lowercase: 'abcdefghijklmnopqrstuvwxyz',
     numbers: '0123456789',
@@ -73,3 +73,51 @@ sizePassword.innerHTML = sliderElement.value;
 sliderElement.addEventListener('input', (e) =>{
     sizePassword.innerHTML = e.target.value;
 })
+
+const generatePassword = () =>{
+    // string que vai armazenar os caracteres
+    let selectedCharset = '';
+
+    // Obter os checkboxes selecionados
+    const lowercaseChecked = document.querySelector('.lowercase-check').checked;
+    const uppercaseChecked = document.querySelector('.uppercase-check').checked;
+    const numbersChecked = document.querySelector('.numbers-check').checked;
+    const specialChecked = document.querySelector('.special-check').checked;
+
+    // construir os posiveis caracteres nas opcoes selecionadas
+    if(lowercaseChecked) selectedCharset += charsets.lowercase;
+    if(uppercaseChecked) selectedCharset += charsets.uppercase;
+    if(numbersChecked) selectedCharset += charsets.numbers;
+    if(specialChecked) selectedCharset += charsets.special;
+
+    // Se nenhuma opcao estiver selecionada, selecionar todas
+    if (!selectedCharset){
+
+        selectedCharset = Object.values(charsets).join('');
+        document.querySelector('.lowercase-check').checked = true;
+        document.querySelector('.uppercase-check').checked = true;
+        document.querySelector('.numbers-check').checked = true;
+        document.querySelector('.special-check').checked = true;
+    }
+
+    // Inicializa uma string vazia para armazenar a senha gerada
+    let pass = '';
+    for (let i = 0; i < sliderElement.value; ++i){
+        pass += selectedCharset.charAt(Math.floor(Math.random() * selectedCharset.length));
+    }
+
+    // Excluindo a classe que esconde o container com as senhas
+    containerPassword.classList.remove('hide');
+    // Mudando o html pra colocar a senha
+    password.innerHTML = pass;
+    // Colocando a nova senha numa lista
+    historicoSenha.unshift(pass);
+    if (historicoSenha.length > 3){
+        historicoSenha.pop();
+    }
+    // Adiciando senha nova pra virar a Nova senha
+    novaSenha = pass;
+    
+    console.log(historicoSenha);
+}
+
