@@ -115,9 +115,18 @@ const generatePassword = () =>{
     if (historicoSenha.length > 3){
         historicoSenha.pop();
     }
-    // Adiciando senha nova pra virar a Nova senha
+    // Adicionando senha nova pra virar a Nova senha
     novaSenha = pass;
     
     console.log(historicoSenha);
+
+    const historico = document.querySelector('.password-generator__history');
+    if(historico){
+        historico.style.display = 'block';
+        historico.querySelector('.password-generator__history--list').innerHTML = historicoSenha
+        .map(senha => `<li class="password-generator-history-item">${senha}</li>`)
+        .join('');
+        
+    }
 }
 
